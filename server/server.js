@@ -8,7 +8,7 @@ app.use(cors());
 
 const socketIO = require("socket.io")(http, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://chat-app-vert-ten-51.vercel.app",
   },
 });
 
