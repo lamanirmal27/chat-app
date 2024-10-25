@@ -13,7 +13,7 @@ const ChatPage = ({ socket }) => {
   }, [socket, messages]);
 
   useEffect(() => {
-    lastMessegeRef.current?.scrollIntoView({ behavior: smooth });
+    lastMessegeRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
   useEffect(() => {
