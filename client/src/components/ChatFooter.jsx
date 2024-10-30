@@ -19,17 +19,17 @@ const ChatFooter = ({ socket }) => {
     setMessage("");
   };
   return (
-    <div className="chat__footer">
+    <div className="p-3 bg-[#f9f5eb] h-[10vh] ">
       <form className="form" onSubmit={handleSendMessage}>
         <input
           type="text"
           placeholder="Write message"
-          className="message"
+          className="w-4/5 h-full rounded-lg border border-solid border-[#ddd] outline-none p-4"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleTyping}
         />
-        <button className="sendBtn">SEND</button>
+        <button className="w-36 bg-green-500 p-2 border-none outline-none text-[#eae3d2] cursor-pointer ">SEND</button>
       </form>
     </div>
   );

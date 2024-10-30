@@ -21,9 +21,9 @@ const ChatPage = ({ socket }) => {
   }, [socket]);
 
   return (
-    <div className="chat">
+    <div className="w-full h-screen flex items-center">
       <ChatBar socket={socket} />
-      <div className="chat__main">
+      <div className="h-full flex-[0.8] ">
         <ChatBody
           typingStatus={typingStatus}
           messages={messages}

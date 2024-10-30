@@ -3,12 +3,13 @@ const app = express();
 const PORT = 3000;
 const http = require("http").Server(app);
 const cors = require("cors");
+require("dotenv").config();
 
 app.use(cors());
 
 const socketIO = require("socket.io")(http, {
   cors: {
-    origin: "https://chat-app-vert-ten-51.vercel.app",
+    origin: process.env.CLIENT_URL_LOCAL,
   },
 });
 
@@ -19,7 +20,7 @@ socketIO.on("connection", (socket) => {
 
   socket.on("newUser", (data) => {
     users.push(data);
-    console.log(users);
+    // console.log(users);
     socketIO.emit("newUserResponse", users);
   });
 
@@ -32,7 +33,7 @@ socketIO.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("🔥: A user disconnected");
     users = users.filter((user) => user.socketID !== socket.id);
-    console.log(users);
+    // console.log(users);
 
     socketIO.emit("newUserResponse", users);
     socket.disconnect();

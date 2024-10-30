@@ -11,11 +11,14 @@ const ChatBar = ({ socket }) => {
   }, [socket]);
 
   return (
-    <div className="chat__sidebar">
+    <div
+      className="h-full bg-[#f9f5eb] flex-[0.2] p-5 border-r"
+      style={{ borderRightColor: "#fdfdfd" }}
+    >
       <h2>Open Chat</h2>
       <div>
-        <h4 className="chat__header">ACTIVE USERS</h4>
-        <div className="chat__users">
+        <h4 className="mt-8 mb-5">ACTIVE USERS</h4>
+        <div className="mb-2 text-[#607eaa] text-sm">
           {users.map((user) => (
             <p key={user.socketID}>{user.userName}</p>
           ))}
